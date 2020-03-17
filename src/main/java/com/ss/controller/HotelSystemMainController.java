@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.ss.command.GuestCommand;
@@ -87,11 +88,8 @@ public class HotelSystemMainController {
 	
 	//displaying record to be edited >Initial phase request
 	@GetMapping("/edit_record.htm")
-	public String getGuestDetailsById(@ModelAttribute("guestCmd")GuestCommand cmd,HttpServletRequest req) {
-		int id=0;
+	public String getGuestDetailsById(@ModelAttribute("guestCmd")GuestCommand cmd,@RequestParam(name="id")int id) {
 		GuestDTO dto=null;
-		//get additional request parameter
-		id=Integer.parseInt(req.getParameter("id"));
 		//use service
 		dto=service.getGuestRecordById(id);
 		//copy dto to command
