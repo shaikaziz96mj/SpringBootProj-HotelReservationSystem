@@ -84,7 +84,7 @@ public class HotelMgmtServiceImpl implements HotelMgmtService {
 	public String deleteGuestRecord(int id) {
 		//use repository
 		guestRepo.deleteById(id);
-		return "Record Deleted";
+		return String.format("Record is Deleted with ID %d", id);
 	}
 
 }//class

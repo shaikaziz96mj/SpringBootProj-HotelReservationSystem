@@ -22,4 +22,5 @@ public class Exception_ErrorHandler {
 	public String handleAllExceptions() {
 		return "all_error";
 	}
+	
 }
