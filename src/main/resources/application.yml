@@ -1,0 +1,7 @@
+spring:
+  main:
+    banner-mode: off
+  mvc:    view:      prefix: /WEB-INF/pages/
+      suffix: .jsp
+  jpa:    hibernate:      ddl-auto: update
+  datasource:    jndi-name: java:/comp/env/mypool
